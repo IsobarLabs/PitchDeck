@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Isobar - Pitch Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B111E;
+            color: #E0E0E0;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        .slide {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 4rem;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #2d3748;
+}
+        .slide::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 199, 0, 0.05), transparent 70%);
+    z-index: 0;
+}
+        .slide-content {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        .gold-text {
+            color: #FFC700;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 1rem;
+            color: #4a5568;
+        }
+        /* Background subtle pattern */
+        .pattern-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(#1a202c 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        .content-z {
+            position: relative;
+            z-index: 1;
+        }
+         /* For the roadmap timeline */
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+            padding-left: 2.5rem;
+            border-left: 2px solid #4a5568;
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.6rem;
+            top: 0.25rem;
+            height: 1.125rem;
+            width: 1.125rem;
+            background-color: #FFC700;
+            border-radius: 9999px;
+            border: 2px solid #0B111E;
+        }
+        .title-font {
+             font-family: 'Playfair Display', serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide bg-[#0B111E] pattern-bg">
+        <div class="slide-content content-z text-center">
+            <!-- User's actual logo image, made larger -->
+            <img src="isobar logo.jpg" alt="The Isobar Logo" class="mx-auto mb-8 w-96 rounded-xl shadow-lg">
+            
+            <div class="mt-12 text-lg text-gray-400">
+                <p>Maanvik Agarwal</p>
+                <p>Founder</p>
+                <a href="http://isobar.app" target="_blank" class="mt-2 inline-block px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full hover:bg-yellow-500 hover:text-black transition-colors">isobar.app</a>
+            </div>
+        </div>
+        <div class="slide-number">1 / 9</div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide bg-[#10182A]">
+        <div class="slide-content">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Weather touches <span class="gold-text">everyone</span>.</h2>
+            <p class="text-2xl md:text-3xl font-light text-gray-300 mb-12">But prediction is passive.</p>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-xl font-semibold text-white mb-2">Passive Interaction</h3>
+                    <p class="text-gray-400">Billions interact with weather daily, yet few engage analytically. It's a one-way flow of information.</p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-xl font-semibold text-white mb-2">Untapped Market</h3>
+                    <p class="text-gray-400">Prediction markets thrive in sports and finance. Weather, the most universal dataset, remains an open field.</p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-xl font-semibold text-white mb-2">No Platform for Skill</h3>
+                    <p class="text-gray-400">There is no dedicated platform that exists to reward and recognize true atmospheric intelligence.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">2 / 9</div>
+    </div>
+
+    <!-- Slide 3: The Solution -->
+    <div class="slide bg-[#0B111E]">
+        <div class="slide-content">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16">We turn forecasting into a <span class="gold-text">skill-based sport</span>.</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                <div class="w-full md:w-1/2 text-left bg-gray-900 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4 gold-text">Predict & Compete</h3>
+                    <p class="text-lg text-gray-300">Users predict real-world weather outcomes in a beautiful, gamified experience. Compete on live leaderboards and prove your analytical skill against the consensus. Rooted in real, verifiable data from official sources.</p>
+                </div>
+                <div class="w-full md:w-1/2 grid grid-cols-1 gap-6 text-left">
+                    <div class="flex items-start gap-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFC700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V6.5L15.5 2z"></path><path d="M3 7.6v12.8c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h9.8"></path><path d="M15 2v5h5"></path></svg>
+                        <div>
+                            <h4 class="font-semibold text-lg text-white">Verifiable Data</h4>
+                            <p class="text-gray-400">All predictions are settled against official meteorological data sources.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFC700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 15h1.5a2.5 2.5 0 0 1 0 5H4"></path><path d="M18 15h1.5a2.5 2.5 0 0 0 0 5H18"></path><line x1="12" y1="6" x2="12" y2="18"></line><path d="M12 6h-1.5a2.5 2.5 0 0 0 0 5H12"></path><path d="M12 18h-1.5a2.5 2.5 0 0 1 0-5H12"></path></svg>
+                        <div>
+                            <h4 class="font-semibold text-lg text-white">Gamified Interface</h4>
+                            <p class="text-gray-400">An intuitive and engaging UI that makes weather data fun to analyze.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFC700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><path d="M12 20v-4h4"></path><path d="M4 12H2"></path><path d="M10 12H8"></path><path d="M16 12h-2"></path><path d="M22 12h-2"></path><path d="m16.2 19.8-.4-.4"></path><path d="m8.2 15.8-.4-.4"></path><path d="m16.2 8.2-.4-.4"></path><path d="m8.2 4.2-.4-.4"></path></svg>
+                        <div>
+                            <h4 class="font-semibold text-lg text-white">Live Leaderboards</h4>
+                            <p class="text-gray-400">Compete for status and prizes, proving your skill against the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">3 / 9</div>
+    </div>
+
+    <!-- Slide 4: Market Opportunity -->
+    <div class="slide bg-[#10182A]">
+        <div class="slide-content">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">A universal dataset. A <span class="gold-text">global market</span>.</h2>
+            <p class="text-xl md:text-2xl font-light text-gray-300 mb-16">The potential for growth is as vast as the sky itself.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <p class="text-6xl font-black gold-text">1B+</p>
+                    <h3 class="text-2xl font-semibold mt-2 text-white">India First Market</h3>
+                    <p class="text-gray-400 mt-2">Weather-aware, mobile-first, and gaming-savvy users ready for a new challenge.</p>
+                </div>
+                <div class="text-center">
+                     <p class="text-6xl font-black gold-text">1st</p>
+                    <h3 class="text-2xl font-semibold mt-2 text-white">First-Mover Advantage</h3>
+                    <p class="text-gray-400 mt-2">A clear, open field in the weather prediction gamification space with no direct competitors.</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-6xl font-black gold-text">$XX B</p>
+                    <h3 class="text-2xl font-semibold mt-2 text-white">Global TAM</h3>
+                    <p class="text-gray-400 mt-2">A future multi-billion dollar opportunity across gaming, data analytics, and climate tech.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">4 / 9</div>
+    </div>
+    
+    <!-- Slide 5: Product in Action -->
+<!-- Slide 5: Product in Action -->
+<div class="slide bg-[#010415] pattern-bg">
+    <div class="slide-content content-z">
+        <h2 class="text-4xl md:text-5xl font-bold mt-24 mb-16">A Live, <span class="gold-text">Demonstrable Prototype</span>.</h2>
+
+        <div class="flex justify-center items-center">
+            <div class="w-full max-w-3xl p-2 bg-gray-800 rounded-2xl border-4 border-gray-700 shadow-2xl">
+                <img src="ss.jpeg" alt="Isobar Web App Screenshot" class="w-full h-96 object-cover rounded-lg">
+            </div>
+        </div>
+
+        <a href="http://isobar.app" target="_blank" class="mt-20 inline-block px-8 py-3 bg-yellow-500 text-black font-bold rounded-lg text-xl hover:bg-yellow-400 transition-colors">
+            Try the Live Demo Now: isobar.app
+        </a>
+    </div>
+    <div class="slide-number">5 / 9</div>
+</div>
+
+    <!-- Slide 6: Business Model -->
+    <div class="slide bg-[#10182A]">
+        <div class="slide-content">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Freemium-first.</h2>
+            <p class="text-2xl md:text-3xl font-light text-gray-300 mb-16"><span class="gold-text">Skill-based</span> monetization.</p>
+             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-xl font-semibold text-white mb-2">Ad Partnerships</h3>
+                    <p class="text-gray-400">Premium, non-intrusive advertising partnerships with relevant brands.</p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-xl font-semibold text-white mb-2">Isobar Pro</h3>
+                    <p class="text-gray-400">A premium subscription for advanced data tools, analytics, and forecast models.</p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-xl font-semibold text-white mb-2">In-App Purchases</h3>
+                    <p class="text-gray-400">Cosmetic upgrades (themes, avatars) and virtual currency for special events.</p>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
+                    <h3 class="text-xl font-semibold text-white mb-2">Sponsored Tournaments</h3>
+                    <p class="text-gray-400">Brand-sponsored events with leaderboards and non-monetary prizes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">6 / 9</div>
+    </div>
+
+    <!-- Slide 7: Roadmap -->
+<div class="slide bg-[#010415] pattern-bg overflow-y-auto">
+    <div class="slide-content content-z pb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mt-12 mb-4">India First. <span class="gold-text">Protocol Next</span>.</h2>
+        <p class="text-xl md:text-2xl font-light text-gray-300 mb-16">A phased roadmap from MVP to global infrastructure.</p>
+
+        <div class="max-w-2xl mx-auto text-left space-y-12">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-bold gold-text">Phase 1: IGNITION (Q4 2025 – Q1 2026)</h3>
+                <p class="text-lg text-white font-semibold">Launch & Virality</p>
+                <p class="text-gray-400">Release MVP in India with rain, wind, and AQI contests. Drive growth via Grand Challenges and Forecast Certificate shares. Open waitlist for Isobar Pro.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-bold gold-text">Phase 2: ESCAPE VELOCITY (2026)</h3>
+                <p class="text-lg text-white font-semibold">Scale & Monetize</p>
+                <p class="text-gray-400">Launch social features and blitz contests. Hit 1M MAU. Release Isobar Pro and secure brand-sponsored tournaments.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-bold gold-text">Phase 3: ORBIT (2027)</h3>
+                <p class="text-lg text-white font-semibold">Global Expansion</p>
+                <p class="text-gray-400">Launch real-money version in UK. Release Isobar Terminal and B2B Data API. Reach 5M global MAU and onboard enterprise clients.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-bold gold-text">Phase 4: SINGULARITY (2028+)</h3>
+                <p class="text-lg text-white font-semibold">Protocol Vision</p>
+                <p class="text-gray-400">Launch AI-powered Consensus Feeds. Expand into logistics and agriculture. Position Isobar Labs as a strategic data infrastructure asset.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">7 / 9</div>
+</div>
+
+    <!-- Slide 8: Differentiation -->
+    <div class="slide bg-[#10182A]">
+        <div class="slide-content">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Not fantasy. Not speculation.</h2>
+            <p class="text-2xl md:text-3xl font-light text-gray-300 mb-12"><span class="gold-text">Pure skill</span>.</p>
+            <div class="grid md:grid-cols-3 gap-4">
+                <!-- Fantasy Sports -->
+                <div class="bg-gray-900/50 p-6 rounded-lg border border-gray-700">
+                     <h3 class="text-2xl font-bold text-white mb-6">Fantasy Sports</h3>
+                    <div class="space-y-4 text-left">
+                        <div><p class="font-semibold text-white">Core Appeal:</p><p class="text-gray-400">Fandom</p></div>
+                        <div><p class="font-semibold text-white">Accessibility:</p><p class="text-gray-400">Sports-Specific</p></div>
+                        <div><p class="font-semibold text-white">Monetization:</p><p class="text-gray-400">Ads + Entry Fees</p></div>
+                    </div>
+                </div>
+                
+                <!-- The Isobar -->
+                <div class="bg-gray-800 p-6 rounded-lg border-2 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-500 mb-6">The Isobar</h3>
+                    <div class="space-y-4 text-left">
+                        <div><p class="font-semibold text-white">Core Appeal:</p><p class="text-gray-300">Analytical Skill</p></div>
+                        <div><p class="font-semibold text-white">Accessibility:</p><p class="text-gray-300">Universal</p></div>
+                        <div><p class="font-semibold text-white">Monetization:</p><p class="text-gray-300">Freemium + Skill</p></div>
+                    </div>
+                </div>
+                
+                <!-- Prediction Markets -->
+                <div class="bg-gray-900/50 p-6 rounded-lg border border-gray-700">
+                     <h3 class="text-2xl font-bold text-white mb-6">Prediction Markets</h3>
+                    <div class="space-y-4 text-left">
+                        <div><p class="font-semibold text-white">Core Appeal:</p><p class="text-gray-400">Financial Speculation</p></div>
+                        <div><p class="font-semibold text-white">Accessibility:</p><p class="text-gray-400">Niche</p></div>
+                        <div><p class="font-semibold text-white">Monetization:</p><p class="text-gray-400">Risk-Based</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">8 / 9</div>
+    </div>
+
+    <!-- Slide 9: Thank You -->
+<div class="slide bg-[#0B111E] pattern-bg">
+    <div class="slide-content content-z text-center">
+        <h2 class="text-5xl md:text-6xl font-bold mb-6 title-font gold-text">Thank You</h2>
+        <p class="text-2xl md:text-3xl text-gray-300 mb-8">For believing in the power of atmospheric intelligence.</p>
+        
+        <div class="mt-6 text-lg text-gray-400">
+            <p>Maanvik Agarwal</p>
+            <p>Founder, The Isobar</p>
+            <a href="http://isobar.app" target="_blank" class="mt-4 inline-block px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full hover:bg-yellow-500 hover:text-black transition-colors">isobar.app</a>
+        </div>
+        
+        <div class="mt-12 text-sm text-gray-600 italic">
+            <p>“Forecasting isn’t just science—it’s strategy.”</p>
+        </div>
+    </div>
+    <div class="slide-number">9 / 9</div>
+</div>
+
+
+</body>
+</html>
+
+
